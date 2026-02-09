@@ -7,7 +7,7 @@ export const Navbar = () => {
 	const links = [
 		{ path: '/', label: 'Welcome' },
 		{ path: '/about', label: 'About' },
-		{ type: 'pdf', url: '/menu.pdf', label: 'Menu' },
+		{ type: 'pdf', url: '/soft-launch-menu.pdf', label: 'Menu' },
 		{ path: '/contact', label: 'Contact' }
 	];
 
