@@ -1,0 +1,1 @@
+export { DoorKnocker } from './doorKnocker';

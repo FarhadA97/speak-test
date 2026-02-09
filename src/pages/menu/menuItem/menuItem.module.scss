@@ -1,0 +1,56 @@
+@import '/src/utils/sass/mixins.scss';
+
+:global(.menu:first-of-type .menu-category:first-of-type .menu-item:first-of-type) {
+	width: 45%;
+}
+
+.itemCard {
+	@include flex($justify: start, $align: start, $direction: column);
+
+	gap: 8px;
+	width: 55%;
+	padding: 5px;
+	border-radius: 5px;
+	color: black;
+	text-align: justify;
+	text-decoration: none;
+	transition: background-color 0.4s ease;
+
+	&:hover {
+		background-color: #f1f4ff;
+	}
+
+	.itemHeading,
+	.itemPrice,
+	.itemDescription {
+		margin-bottom: 0;
+		font-size: 18px;
+	}
+
+	.itemHeading {
+		font-weight: bold;
+	}
+
+	.itemPrice {
+		color: rgba(0, 0, 0, 0.2);
+	}
+}
+
+@include responsive(bigScreen) {
+	:global(.menu:first-of-type .menu-category:first-of-type .menu-item:nth-of-type(-n+2)) {
+		width: 48%;
+	}
+}
+
+@include responsive(largeTablet) {
+	.itemCard {
+		width: 100% !important;
+		text-align: unset;
+
+		.itemHeading,
+		.itemPrice,
+		.itemDescription {
+			font-size: 15px;
+		}
+	}
+}

@@ -1,0 +1,50 @@
+@import '/src/utils/sass/mixins.scss';
+
+.container {
+	@include flex($justify: start, $align: start);
+
+	position: relative;
+	z-index: 10;
+	gap: 40px;
+	margin-left: 10rem;
+
+	.headingContainer {
+		min-width: 100px;
+
+		.menuHeading {
+			object-fit: cover;
+			width: 62%;
+
+			&.appetizers {
+				width: 23px;
+			}
+		}
+	}
+
+	.description {
+		font-size: 18px;
+	}
+}
+
+@include responsive(largeTablet) {
+	.container {
+		gap: 5px;
+		margin-left: 0;
+		padding: 15px 30px;
+
+		.description {
+			font-size: 15px;
+		}
+	}
+}
+
+@include responsive(smallDevice) {
+	.container {
+		gap: 0;
+		padding: 12px 20px;
+
+		.description {
+			font-size: 15px;
+		}
+	}
+}

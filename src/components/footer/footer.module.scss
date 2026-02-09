@@ -1,0 +1,26 @@
+@import '/src/utils/sass/mixins.scss';
+
+.footer {
+	@include flex();
+
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 999;
+	justify-content: flex-start;
+	width: 100%;
+	height: 30px;
+	padding-left: 30px;
+	background-color: black;
+
+	& p {
+		margin: 0;
+		color: #969696;
+		font-size: 12px;
+		font-family: Inter, sans-serif;
+	}
+
+	& a {
+		color: #969696;
+	}
+}

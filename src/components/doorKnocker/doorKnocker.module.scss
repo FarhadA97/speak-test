@@ -1,0 +1,59 @@
+@import '/src/utils/sass/mixins.scss';
+
+.knocker {
+	overflow: visible;
+	width: 200px;
+	cursor: pointer;
+	transition: transform 1s ease-in-out;
+
+	&:hover {
+		cursor: pointer;
+		transform: translateX(0);
+	}
+}
+
+.slideRight {
+	transform: translateX(50px);
+}
+
+.handle {
+	transform-origin: 50px 30px -20px;
+}
+
+.knock {
+	animation: knock 0.8s ease-in-out;
+}
+
+@keyframes knock {
+	0% {
+		transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+	}
+
+	30% {
+		transform: rotateX(6deg) rotateY(0deg) rotateZ(2deg);
+	}
+
+	70% {
+		transform: rotateX(-0deg) rotateY(-0deg) rotateZ(-1deg);
+	}
+
+	100% {
+		transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+	}
+}
+
+@include responsive(largeTablet) {
+	.knocker {
+		width: 180px;
+	}
+
+	.slideRight {
+		transform: translateX(100px);
+	}
+}
+
+@include responsive(smallDevice) {
+	.knocker {
+		width: 150px;
+	}
+}

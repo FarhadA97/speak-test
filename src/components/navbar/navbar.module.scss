@@ -1,0 +1,101 @@
+@import '/src/utils/sass/mixins.scss';
+
+.navbar {
+	display: flex;
+	gap: 80px;
+	align-items: start;
+	justify-content: space-between;
+	padding-top: 130px;
+	padding-bottom: 130px;
+	padding-left: 80px;
+
+	.navLinks {
+		position: relative;
+		top: 15px;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.navButton {
+		color: rgb(255, 255, 255);
+		font-size: 16px;
+		font-family: Inter, sans-serif;
+		text-decoration: none;
+		transition: color 0.3s ease-in-out;
+
+		&:hover {
+			color: #696969;
+			text-decoration: none;
+		}
+
+		&.selected {
+			color: #a10303;
+		}
+	}
+
+	.logoContainer {
+		width: calc(25vw - 165px);
+
+		.logo {
+			width: 50%;
+			min-width: 60px;
+			max-height: 620px;
+		}
+
+		.logoMenu {
+			width: 28%;
+			min-width: 32px;
+		}
+	}
+}
+
+@include responsive(largeTablet) {
+	.navbar {
+		position: relative;
+		z-index: 999;
+		flex-direction: column-reverse;
+		justify-content: center;
+		padding-top: 65px;
+		padding-bottom: 65px;
+		padding-left: 40px;
+
+		.navLinks {
+			top: 0;
+		}
+
+		.logoContainer {
+			width: calc(25vw - 150px);
+
+			.logo {
+				width: 100%;
+				min-width: 65px;
+			}
+
+			.logoMenu {
+				width: 65%;
+			}
+		}
+	}
+}
+
+@include responsive(smallDevice) {
+	.navbar {
+		padding: 0;
+		padding-left: 25px;
+
+		.logoContainer {
+			width: 100%;
+
+			.logo {
+				width: 75%;
+				min-width: unset;
+			}
+
+			.logoMenu {
+				width: 45%;
+				margin-right: 50px;
+			}
+		}
+	}
+}

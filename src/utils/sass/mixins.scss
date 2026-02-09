@@ -1,0 +1,54 @@
+@mixin flex($justify: center, $align: center, $direction: row) {
+	display: flex;
+	flex-direction: $direction;
+	align-items: $align;
+	justify-content: $justify;
+}
+
+@mixin responsive($breakpoint) {
+	@if $breakpoint == smallDevice {
+		@media (max-width: 576px) {
+			@content;
+		}
+	}
+
+	@else if $breakpoint == extraSmallDevice {
+		@media (max-width: 480px) {
+			@content;
+		}
+	}
+
+	@else if $breakpoint == smallTablet {
+		@media (max-width: 768px) {
+			@content;
+		}
+	}
+
+	@else if $breakpoint == largeTablet {
+		@media (max-width: 992px) {
+			@content;
+		}
+	}
+
+	@else if $breakpoint == laptop {
+		@media (max-width: 1200px) {
+			@content;
+		}
+	}
+
+	@else if $breakpoint == desktop {
+		@media (max-width: 1440px) {
+			@content;
+		}
+	}
+
+	@else if $breakpoint == bigScreen {
+		@media (min-width: 1441px) {
+			@content;
+		}
+	}
+
+	@else {
+		@content;
+	}
+}

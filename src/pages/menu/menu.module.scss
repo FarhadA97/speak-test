@@ -1,0 +1,48 @@
+@import '/src/utils/sass/mixins.scss';
+
+.menuContainer {
+	@include flex($justify: unset, $align: unset, $direction: column);
+
+	gap: 90px;
+}
+
+.blackRing,
+.redRing,
+.greenDot {
+	position: absolute;
+}
+
+.blackRing {
+	top: -20px;
+	width: 120px;
+}
+
+.redRing {
+	top: 50%;
+	right: 0;
+}
+
+.greenDot {
+	right: 18rem;
+	bottom: -50px;
+}
+
+.swoosh {
+	width: 75%;
+}
+
+@include responsive(largeTablet) {
+	.blackRing {
+		top: -50px;
+		width: 100px;
+	}
+
+	.greenDot {
+		right: 0;
+		bottom: -130px;
+	}
+
+	.swoosh {
+		width: 100%;
+	}
+}
